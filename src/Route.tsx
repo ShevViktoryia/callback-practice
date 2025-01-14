@@ -6,7 +6,11 @@ import { RouteType } from "./FlightTable";
 
 type RouteProps = {
   route: RouteType;
-  toggleFTIsBooked: (flightTableID: string, routeID: string) => void;
+  toggleFTIsBooked: (
+    flightTableID: string,
+    routeID: string,
+    isBooked: boolean
+  ) => void;
   flightTableID: string;
   updateFTRoutesFrom: (
     flightID: string,
@@ -38,8 +42,8 @@ export const Route = ({
     //updateFTRoutesTo();
   };
 
-  const handleToggleFTIsBooked = () => {
-    alert("Во мне куча ошибок!");
+  const handleToggleFTIsBooked = (isBooked: boolean) => {
+    toggleFTIsBooked(flightTableID, route.id, isBooked);
   };
 
   return (
@@ -68,7 +72,7 @@ export const Route = ({
               <label>
                 <CheckBox
                   isDone={route.isBooked}
-                  updateCheckBox={handleToggleFTIsBooked}
+                  updateCheckBox={(isDone) => handleToggleFTIsBooked(isDone)}
                 />
                 {route.isBooked ? " Booked" : " Available"}
               </label>
