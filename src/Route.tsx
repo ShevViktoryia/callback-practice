@@ -34,12 +34,12 @@ export const Route = ({
     //alert('Почини меня, чтобы я могла удалять рейс. Сделай это через универсальную кнопку.')
   };
 
-  const handleUpdateRouteFrom = () => {
-    // updateFTRoutesFrom()
+  const handleUpdateRouteFrom = (newFrom: string) => {
+    updateFTRoutesFrom(flightTableID, route.id, newFrom);
   };
 
-  const handleUpdateRouteTo = () => {
-    //updateFTRoutesTo();
+  const handleUpdateRouteTo = (newTo: string) => {
+    updateFTRoutesTo(flightTableID, route.id, newTo);
   };
 
   const handleToggleFTIsBooked = (isBooked: boolean) => {
@@ -58,15 +58,12 @@ export const Route = ({
             <td className={`${styles.ftCell} ${styles.pointerCursor}`}>
               <UpdateItem
                 oldTitle={route.from}
-                callBack={() => "handleUpdateRouteFrom"}
+                callBack={handleUpdateRouteFrom}
               />
             </td>
             <td className={`${styles.ftCell} ${styles.pointerCursor}`}>➔</td>
             <td className={`${styles.ftCell} ${styles.pointerCursor}`}>
-              <UpdateItem
-                oldTitle={route.to}
-                callBack={() => "handleUpdateRouteTo"}
-              />
+              <UpdateItem oldTitle={route.to} callBack={handleUpdateRouteTo} />
             </td>
             <td className={styles.checkboxContainer}>
               <label>
