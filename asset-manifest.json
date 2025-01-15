@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/callback-practice/static/css/main.7d879569.css",
+    "main.js": "/callback-practice/static/js/main.2f34fff8.js",
+    "index.html": "/callback-practice/index.html",
+    "main.7d879569.css.map": "/callback-practice/static/css/main.7d879569.css.map",
+    "main.2f34fff8.js.map": "/callback-practice/static/js/main.2f34fff8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7d879569.css",
+    "static/js/main.2f34fff8.js"
+  ]
+}
